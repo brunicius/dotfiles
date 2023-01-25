@@ -182,9 +182,9 @@ mode "resize" {
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-#        status_command i3status
-# }
+bar {
+       status_command i3status
+}
 ### CUSTOM ###
 
 # Remove borders
@@ -204,7 +204,7 @@ exec --no-startup-id bash $HOME/.fehbg
 # Default screenlayout !!
 exec --no-startup-id bash $HOME/.screenlayout/two.sh
 # Polybar startup
-exec --no-startup-id polybar -c $HOME/.config/polybar/config.ini example
+#exec --no-startup-id polybar -c $HOME/.config/polybar/config.ini example
 # Numlock
 exec_always --no-startup-id numlockx on
 
