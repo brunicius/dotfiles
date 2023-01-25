@@ -207,6 +207,8 @@ exec --no-startup-id bash $HOME/.screenlayout/two.sh
 #exec --no-startup-id polybar -c $HOME/.config/polybar/config.ini example
 # Numlock
 exec_always --no-startup-id numlockx on
+# Touchpad Tapping to Click
+exec xinput set-prop "Synaptics TM3336-004" "libinput Tapping Enabled" 1
 
 # Binds
 
