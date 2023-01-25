@@ -95,7 +95,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 #bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
@@ -191,15 +191,30 @@ bar {
 }
 ### CUSTOM ###
 
+# Assign workspaces to monitors
+workspace $ws1 output eDP
+workspace $ws2 output eDP
+workspace $ws3 output eDP
+workspace $ws4 output eDP
+workspace $ws5 output eDP
+workspace $ws6 output HDMI-A-0
+workspace $ws7 output HDMI-A-0
+workspace $ws8 output HDMI-A-0
+workspace $ws9 output HDMI-A-0
+workspace $ws10 output HDMI-A-0
+
 # Remove borders
 #for_window [class="^.*"] border pixel 0
 new_window normal 0
 new_float normal 0
 default_border pixel 0
 
+# Window rules
+for_window [class="org.gnome.Nautilus"] floating enable
+
 # Gaps
-gaps inner 8
-gaps outer 0
+#gaps inner 0
+#gaps outer 0
 # Border Radius
 #border_radius 12
 
@@ -220,20 +235,40 @@ exec xinput set-prop "Synaptics TM3336-004" "libinput Tapping Enabled" 1
 bindsym $mod+Escape exec i3lock-fancy
 
 # App binds
-# Alacritty terminal
-bindsym $mod+space exec alacritty
+
+set $term "alacritty"
+set $fileManager "nautilus"
+set $webBrowser "google-chrome-stable"
+
+# Terminal
+bindsym $mod+space exec $term
+# File manager
+bindsym $mod+e exec $fileManager
 # Rofi
 bindsym $mod+Return exec --no-startup-id rofi -show drun -icon-theme "kora" -show-icons
 # Browser
-bindsym $mod+q exec google-chrome-stable
+bindsym $mod+q exec $webBrowser
 # Pulse Audio
 bindsym $mod+p exec pavucontrol
 # Winbox
 bindsym $mod+r exec wine $HOME/Downloads/exe/winbox64.exe
+
+
 
 # Window binds
 # kill focused window
 bindsym $mod+w kill
 # toggle tiling / floating
 bindsym $mod+d floating toggle
+# Toggle view
+bindsym $mod+t layout toggle split
+# Stick toggle
+bindsym $mod+period sticky toggle
+
+# Media binds
+# Play/pause
+bindsym XF86AudioPlay exec playerctl play-pause
+# Next/Previous media
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
