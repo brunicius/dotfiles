@@ -247,18 +247,23 @@ status_command i3status
 
 ### CUSTOM
 
+# Define monitors
+
+set $primaryScreen HDMI-1-1 eDP
+set $secondaryScreen LVDS-1-1 HDMI-A-0
+
 # Assign workspaces to monitors
 
-workspace $ws1 output HDMI-1-1
-workspace $ws2 output HDMI-1-1
-workspace $ws3 output HDMI-1-1
-workspace $ws4 output HDMI-1-1
-workspace $ws5 output HDMI-1-1
-workspace $ws6 output LVDS-1-1
-workspace $ws7 output LVDS-1-1
-workspace $ws8 output LVDS-1-1
-workspace $ws9 output LVDS-1-1
-workspace $ws10 output LVDS-1-1
+workspace $ws1 output $primaryScreen
+workspace $ws2 output $primaryScreen
+workspace $ws3 output $primaryScreen
+workspace $ws4 output $primaryScreen
+workspace $ws5 output $primaryScreen
+workspace $ws6 output $secondaryScreen
+workspace $ws7 output $secondaryScreen
+workspace $ws8 output $secondaryScreen
+workspace $ws9 output $secondaryScreen
+workspace $ws10 output $secondaryScreen
 
 # Remove borders
 
