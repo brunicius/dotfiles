@@ -305,6 +305,9 @@ exec_always --no-startup-id numlockx on
 
 exec xinput set-prop "Synaptics TM3336-004" "libinput Tapping Enabled" 1
 
+# Mouse acceleration
+exec xinput set-prop 11 355 1
+
 # Binds
 
 # Lock screen bind
@@ -316,6 +319,7 @@ bindsym $mod+Escape exec i3lock-fancy
 set $term "alacritty"
 set $fileManager "nautilus"
 set $webBrowser "google-chrome-stable"
+set $printApp "flameshot gui"
 
 # Terminal
 
@@ -332,6 +336,9 @@ bindsym $mod+Return exec --no-startup-id rofi -show drun -icon-theme "kora" -sho
 # Browser
 
 bindsym $mod+q exec $webBrowser
+
+# Print screen
+bindsym Print exec $printApp
 
 # Pulse Audio
 
