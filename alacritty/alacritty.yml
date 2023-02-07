@@ -1,7 +1,7 @@
 # Manual #
 
 window:
-  opacity: 1
+  opacity: .6
   padding:
     x: 15
     y: 15
@@ -14,7 +14,7 @@ cursor:
 
 font:
   # The size to use.
-  size: 10
+  size: 8
 
   normal:
     family: "MesloLGS NF"
