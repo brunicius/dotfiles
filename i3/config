@@ -274,8 +274,8 @@ for_window [class="Org.gnome.Nautilus"] floating enable
 
 # Gaps
 
-#gaps inner 0
-#gaps outer 0
+#gaps inner 5
+#gaps outer 5
 
 # Border Radius
 
