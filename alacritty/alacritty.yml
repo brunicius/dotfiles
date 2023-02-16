@@ -1,5 +1,8 @@
 # Manual #
 
+env:
+  TERM: xterm-256color
+
 window:
   opacity: .6
   padding:
@@ -14,7 +17,7 @@ cursor:
 
 font:
   # The size to use.
-  size: 8
+  size: 10
 
   normal:
     family: "MesloLGS NF"
