@@ -62,7 +62,7 @@ font:
 #     white:   '0xFFFFFF'
 
 import:
-  - ~/.config/alacritty/themes/hyper.yaml
+  - ~/.config/alacritty/themes/breeze.yaml
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
