@@ -317,7 +317,7 @@ bindsym $mod+Escape exec i3lock-fancy
 set $term "alacritty"
 set $fileManager "nautilus"
 set $webBrowser "google-chrome-stable"
-set $printApp "flameshot gui"
+set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
 
 # Terminal
 
@@ -326,6 +326,11 @@ bindsym $mod+Return exec $term
 # Rofi
 
 bindsym $mod+space exec --no-startup-id rofi -show drun -icon-theme "kora" -show-icons
+
+# Lock Screen
+
+bindsym $mod+Shift+x exec --no-startup-id ~/dotfiles/lock/lock
+exec xautolock -locker $HOME/dotfiles/lock/lock
 
 # File manager
 
@@ -337,7 +342,7 @@ bindsym $mod+e exec $fileManager
 bindsym $mod+q exec $webBrowser
 
 # Print screen
-bindsym Print exec $printApp
+bindsym Print --release exec $printApp
 
 # Pulse Audio
 
