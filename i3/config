@@ -244,8 +244,10 @@ bar {
 
 # Define monitors
 
-set $primaryScreen HDMI-1-1 eDP
-set $secondaryScreen LVDS-1-1 HDMI-A-0
+# set $primaryScreen HDMI-1-1 eDP
+# set $secondaryScreen LVDS-1-1 HDMI-A-0
+set $primaryScreen HDMI-A-0
+set $secondaryScreen eDP
 
 # Assign workspaces to monitors
 
