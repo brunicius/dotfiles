@@ -244,8 +244,8 @@ bar {
 
 # Define monitors
 
-set $primaryScreen HDMI-1-1 eDP
-set $secondaryScreen LVDS-1-1 HDMI-A-0
+set $primaryScreen eDP
+set $secondaryScreen HDMI-A-0
 
 # Assign workspaces to monitors
 
@@ -288,8 +288,9 @@ for_window [class="Blueman-manager"] floating enable
 exec --no-startup-id bash $HOME/.screenlayout/two.sh
 
 # Feh Wallpaper startup
-
-exec --no-startup-id bash $HOME/.fehbg
+#exec --no-startup-id bash $HOME/.fehbg
+# nitrogen wallpaper
+exec --no-startup-id nitrogen --restore &
 
 # Polybar startup
 
@@ -298,6 +299,9 @@ exec --no-startup-id bash $HOME/.fehbg
 # Numlock
 
 exec_always --no-startup-id numlockx on
+
+# Picom startup
+exec --no-startup-id picom --experimental-backends
 
 # Touchpad Tapping to Click
 
