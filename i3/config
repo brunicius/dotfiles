@@ -276,8 +276,8 @@ for_window [class="Blueman-manager"] floating enable
 
 # Gaps
 
-#gaps inner 5
-#gaps outer 5
+gaps inner 5
+gaps outer 5
 
 # Border Radius
 
@@ -301,7 +301,7 @@ exec --no-startup-id nitrogen --restore &
 exec_always --no-startup-id numlockx on
 
 # Picom startup
-exec --no-startup-id picom --experimental-backends
+exec --no-startup-id $HOME/bin/picom --experimental-backends
 
 # Touchpad Tapping to Click
 
