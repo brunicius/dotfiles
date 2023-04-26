@@ -244,8 +244,10 @@ bar {
 
 # Define monitors
 
-set $primaryScreen eDP
-set $secondaryScreen HDMI-A-0
+set $primaryScreen eDP HDMI-A-0
+set $secondaryScreen HDMI-A-0 eDP
+# set $primaryScreen HDMI-A-0 eDP
+# set $secondaryScreen eDP HDMI-A-0
 
 # Assign workspaces to monitors
 
@@ -273,6 +275,8 @@ default_border pixel 0
 for_window [class="Org.gnome.Nautilus"] floating enable
 # Blueman floating
 for_window [class="Blueman-manager"] floating enable
+# Crow Translate floating
+for_window [class="Crow Translate"] floating enable
 
 # Gaps
 
@@ -322,19 +326,20 @@ set $term "alacritty"
 set $fileManager "nautilus"
 set $webBrowser "google-chrome-stable"
 set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
+set $translateApp "crow"
 
 # Terminal
 
-bindsym $mod+Return exec $term
+bindsym $mod+space exec $term
 
 # Rofi
 
-bindsym $mod+space exec --no-startup-id rofi -show drun -icon-theme "kora" -show-icons
+bindsym $mod+Return exec --no-startup-id rofi -show drun -icon-theme "kora" -show-icons
 
 # Lock Screen
 
 bindsym $mod+Shift+x exec --no-startup-id ~/dotfiles/lock/lock
-exec xautolock -locker $HOME/dotfiles/lock/lock
+#exec xautolock -locker $HOME/dotfiles/lock/lock
 
 # File manager
 
@@ -356,6 +361,9 @@ bindsym $mod+p exec pavucontrol
 
 bindsym $mod+o exec wine $HOME/Downloads/exe/winbox64.exe
 
+# Translate App
+bindsym $mod+m exec $translateApp
+
 # Window binds
 
 # kill focused window
@@ -365,6 +373,9 @@ bindsym $mod+w kill
 # toggle tiling / floating
 
 bindsym $mod+d floating toggle
+
+# toggle focus tiling / floating
+bindsym $mod+Shift+d focus mode_toggle
 
 # Toggle view
 
@@ -384,4 +395,5 @@ bindsym XF86AudioPlay exec playerctl play-pause
 
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
 
