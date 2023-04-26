@@ -4,14 +4,14 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: .8
+  opacity: 1
   padding:
     x: 15
     y: 15
 
 cursor:
   style:
-    shape: Beam
+    shape: Block
     blinking: on
   blink_interval: 450 
 
@@ -62,7 +62,7 @@ font:
 #     white:   '0xFFFFFF'
 
 import:
-  - ~/.config/alacritty/themes/breeze.yaml
+  - ~/.config/alacritty/themes/citylights.yaml
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
