@@ -287,10 +287,6 @@ gaps outer 5
 
 #border_radius 12
 
-# Default screenlayout !!
-
-exec --no-startup-id bash $HOME/.screenlayout/two.sh
-
 # Feh Wallpaper startup
 #exec --no-startup-id bash $HOME/.fehbg
 # nitrogen wallpaper
