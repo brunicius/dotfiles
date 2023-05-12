@@ -4,7 +4,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 1
+  opacity: .7
   padding:
     x: 15
     y: 15
@@ -20,7 +20,7 @@ font:
   size: 10
 
   normal:
-    family: "MesloLGS NF"
+    family: Fira Code
 
   # The bold font face
   #bold:
