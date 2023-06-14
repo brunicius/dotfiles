@@ -4,7 +4,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: .7
+  opacity: 1
   padding:
     x: 15
     y: 15
@@ -13,7 +13,7 @@ cursor:
   style:
     shape: Block
     blinking: on
-  blink_interval: 450 
+  blink_interval: 450
 
 font:
   # The size to use.
@@ -48,7 +48,7 @@ font:
 #     blue:    '0x0066ff'
 #     magenta: '0xcc00ff'
 #     cyan:    '0x00ffff'
-#     white:   '0xd0d0d0'    
+#     white:   '0xd0d0d0'
 
 #   # Bright colors
 #   bright:
@@ -62,7 +62,7 @@ font:
 #     white:   '0xFFFFFF'
 
 import:
-  - ~/.config/alacritty/themes/citylights.yaml
+  - ~/.config/alacritty/themes/iterm.yaml
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
@@ -257,14 +257,14 @@ colors:
   #  background: '#1d1f21'
   #  foreground: '#c5c8c6'
 
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not
-    # present. If the bright foreground color is not set, or
-    # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
-    # color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
+  # Bright and dim foreground colors
+  #
+  # The dimmed foreground color is calculated automatically if it is not
+  # present. If the bright foreground color is not set, or
+  # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
+  # color will be used.
+  #dim_foreground: '#828482'
+  #bright_foreground: '#eaeaea'
 
   # Cursor colors
   #
@@ -958,4 +958,5 @@ colors:
 
 # Highlight window damage information.
 #highlight_damage: false
+
 
