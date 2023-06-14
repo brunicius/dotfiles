@@ -17,6 +17,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 
@@ -130,7 +131,7 @@ bindsym $mod+f fullscreen toggle
 
 bindsym $mod+s layout stacking
 #bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout toggle split
 
 # toggle tiling / floating
 
@@ -235,7 +236,7 @@ bindsym $mod+r mode "resize"
 
 bar {
     status_command i3status
-    position top
+    position bottom
     font pango:Fira Code Regular 9
 #    separator_symbol " |"
 }
@@ -277,6 +278,9 @@ for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [class="Blueman-manager"] floating enable
 # Crow Translate floating
 for_window [class="Crow Translate"] floating enable
+
+# Workspace for Puppeteer Automated Browser
+assign [class="Chromium-browser"] 2
 
 # Gaps
 
@@ -398,4 +402,33 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # XFCE Settings Daemon
-exec --no-startup-id xfsettingsd --sm-client-disable &
+# exec --no-startup-id xfsettingsd --sm-client-disable &
+
+# Mouse Controls
+
+# Clicking
+#bindsym Control+space exec xdotool mousedown 1 && sleep .5 && xdotool mouseup 1
+
+# Speed Cfg
+set $normalSpeed "10"
+set $fasterSpeed "100"
+
+# Normal
+# Left
+bindsym $mod+$alt+h exec xdotool mousemove_relative -p 270 $normalSpeed
+# Right
+bindsym $mod+$alt+l exec xdotool mousemove_relative -p 90 $normalSpeed
+# Up
+bindsym $mod+$alt+k exec xdotool mousemove_relative -p 0 $normalSpeed
+# Down
+bindsym $mod+$alt+j exec xdotool mousemove_relative -p 180 $normalSpeed
+
+# Faster
+# Left
+bindsym $mod+$alt+Shift+h exec xdotool mousemove_relative -p 270 $fasterSpeed
+# Right
+bindsym $mod+$alt+Shift+l exec xdotool mousemove_relative -p 90 $fasterSpeed
+# Up
+bindsym $mod+$alt+Shift+k exec xdotool mousemove_relative -p 0 $fasterSpeed
+# Down
+bindsym $mod+$alt+Shift+j exec xdotool mousemove_relative -p 180 $fasterSpeed
