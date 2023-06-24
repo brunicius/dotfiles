@@ -4,18 +4,11 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Set up monitors
 
-SCREENS_FOR_EACH_MONITOR=5
+xrandr --output HDMI-A-0 --auto --left-of eDP --auto; sleep 1; nitrogen --restore; sleep 1;
 
-#if type "xrandr"; then
-#	INITIAL=1
-#	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-#		MON=$m
-#		bspc monitor $m -d 1 2 3 4 5
-#	done
-#fi
+for monitor in $(bspc query --monitors); do bspc monitor $monitor -d 1 2 3 4 5; done
 
 
-bspc monitor -d I II III IV V VI VII VIII IX X
 
 
 # Border, gap and padding.
@@ -55,6 +48,7 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-
-#Autostart.sh script
+# Polybar
+$HOME/dotfiles/polybar/launch.sh
+# Autostart.sh script
 $HOME/dotfiles/startup.sh
