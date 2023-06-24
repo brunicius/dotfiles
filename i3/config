@@ -328,7 +328,7 @@ bindsym $mod+Escape exec i3lock-fancy
 # App binds
 
 set $term "alacritty"
-set $fileManager "nautilus"
+set $fileManager "thunar"
 set $webBrowser "google-chrome-stable"
 set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
 set $translateApp "crow"
