@@ -15,14 +15,14 @@ SCREENS_FOR_EACH_MONITOR=5
 #fi
 
 
-bspc monitor -d I II III IV V VI
+bspc monitor -d I II III IV V VI VII VIII IX X
 
 
 # Border, gap and padding.
-bspc config border_width        1 
-bspc config window_gap          12
-bspc config top_padding 0
-bspc config bottom_padding 0
+bspc config border_width	1 
+bspc config window_gap		12
+bspc config top_padding		0
+bspc config bottom_padding 	0
 
 # Mouse config
 
@@ -56,5 +56,5 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 
-# Autostart.sh script
-$HOME/.startup.sh
+#Autostart.sh script
+$HOME/dotfiles/startup.sh

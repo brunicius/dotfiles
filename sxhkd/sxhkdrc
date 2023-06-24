@@ -43,13 +43,13 @@ Print
 
 # Lock screen
 
-alt + shift + x
-	bash $HOME/dotfiles/lock-screen.sh
+#alt + shift + x
+#	bash $HOME/dotfiles/lock-screen.sh
 
 # Reload Wallpaper
 
-super + alt + p
-	bash $HOME/.fehbg
+#super + alt + p
+#	bash $HOME/.fehbg
 
 # Youtube Music (Numpad 2)
 
@@ -77,10 +77,10 @@ super + KP_Left
 super + KP_End
 	xdg-open https://web.whatsapp.com
 
-# File Manager | Nautilus
+# File Manager | Thunar
 
 super + e
-	/usr/bin/nautilus
+	/usr/bin/thunar
 
 # Pulse Audio Control
 
