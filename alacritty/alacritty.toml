@@ -1,0 +1,28 @@
+# Manual #
+import = [ "~/.config/alacritty/themes/iterm.toml" ]
+
+[env]
+  TERM = "xterm-256color"
+
+[window]
+  opacity = 1
+
+[window.padding]
+    x = 15
+    y = 15
+
+[cursor]
+	blink_interval = 450
+
+[cursor.style]
+	shape = "Block"
+	blinking = "on"
+
+
+[font]
+	size = 10
+
+[font.normal]
+	family = "Fira Code"
+
+
