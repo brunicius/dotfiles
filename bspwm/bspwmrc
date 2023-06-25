@@ -3,10 +3,17 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Set up monitors
+MONITOR_COUNT="$(xrandr --query | grep ' connected' | wc -l)"
+
+DESKTOPS_FOR_MONITOR="1 2 3 4 5 6 7 8 9 10"
+
+if [ "$MONITOR_COUNT" -gt 1 ]; then
+    DESKTOPS_FOR_MONITOR="1 2 3 4 5"
+fi
 
 xrandr --output HDMI-A-0 --auto --left-of eDP --auto; sleep 1; nitrogen --restore; sleep 1;
 
-for monitor in $(bspc query --monitors); do bspc monitor $monitor -d 1 2 3 4 5; done
+for monitor in $(bspc query --monitors); do bspc monitor $monitor -d $DESKTOPS_FOR_MONITOR; done
 
 
 
