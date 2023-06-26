@@ -125,3 +125,8 @@ alias rbsp="$HOME/dotfiles/bspwm/bspwmrc"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Temp Aliases
+
+alias web_m="cd ~/dev/mandacaru/web; nvm use"
+alias api_m="cd ~/dev/mandacaru/api; source ./venv/bin/activate"
