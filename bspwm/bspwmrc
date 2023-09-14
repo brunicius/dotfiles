@@ -8,7 +8,7 @@ MONITOR_COUNT="$(xrandr --query | grep ' connected' | wc -l)"
 DESKTOPS_FOR_MONITOR="1 2 3 4 5 6 7 8 9 10"
 
 if [ "$MONITOR_COUNT" -gt 1 ]; then
-    DESKTOPS_FOR_MONITOR="1 2 3 4 5"
+    DESKTOPS_FOR_MONITOR="1 2 3 4 5 6"
 fi
 
 xrandr --output HDMI-A-0 --auto --left-of eDP --auto; sleep 1; nitrogen --restore; sleep 1;
@@ -20,7 +20,7 @@ for monitor in $(bspc query --monitors); do bspc monitor $monitor -d $DESKTOPS_F
 
 # Border, gap and padding.
 bspc config border_width	1 
-bspc config window_gap		12
+bspc config window_gap		0
 bspc config top_padding		0
 bspc config bottom_padding 	0
 
@@ -43,7 +43,7 @@ bspc config split_ratio 0.5
 
 # Border colors from TWM-G
 bspc config normal_border_color "#000000"
-bspc config focused_border_color "#ffffff"
+bspc config focused_border_color "#ffffff88"
 bspc config focus_follows_pointer true
 
 
