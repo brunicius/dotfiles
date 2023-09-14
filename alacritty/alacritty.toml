@@ -1,5 +1,5 @@
 # Manual #
-import = [ "~/.config/alacritty/themes/iterm.toml" ]
+import = [ "~/.config/alacritty/themes/hyper.toml" ]
 
 [env]
   TERM = "xterm-256color"
