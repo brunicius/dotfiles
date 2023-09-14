@@ -107,6 +107,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dev="cd ~/dev"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -120,13 +124,15 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Reload BSPWM alias
-alias rbsp="$HOME/dotfiles/bspwm/bspwmrc"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Java Gray blobs
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
 
-# Temp Aliases
+# Android Studio paths
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-alias web_m="cd ~/dev/mandacaru/web; nvm use"
-alias api_m="cd ~/dev/mandacaru/api; source ./venv/bin/activate"
+# Aliases
+source $HOME/dotfiles/.aliases
