@@ -15,6 +15,8 @@ super + @space
 #
 
 # FN Media keys
+super + Prior
+	pactl set-default-sink $(pactl list sinks | grep -e 'Name:.*hdmi' | awk '{split($0, a, ": "); print a[2]}'); alacritty
 
 # Lower/Raise volume
 XF86Audio{Lower,Raise}Volume
@@ -40,6 +42,22 @@ super + ctrl + F12
 # Screenshot
 Print
 	flameshot gui
+
+# Connect bluetooth phone
+super + Up
+	bluetoothctl connect 1C:52:16:DD:2A:E0; sleep .5; pactl set-default-sink bluez_sink.1C_52_16_DD_2A_E0.a2dp_sink
+
+# Reconnect network
+super + Left
+	sh $HOME/dotfiles/scripts/reconnect.sh
+
+# Change to HDMI sink
+super + Right
+	sh $HOME/dotfiles/scripts/hdmi.sh
+
+# Disconnect bluetooth
+super + Down
+	bluetoothctl disconnect
 
 # Lock screen
 
@@ -80,7 +98,7 @@ super + KP_End
 # File Manager | Thunar
 
 super + e
-	/usr/bin/thunar
+	/usr/bin/nemo
 
 # Pulse Audio Control
 
