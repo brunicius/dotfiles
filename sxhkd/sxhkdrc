@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	rofi -show drun -show-icons
+  alacritty
 
 # program launcher
 super + @space
-	alacritty
+  rofi -show drun -show-icons
 
 #
 # Shortcuts
