@@ -11,7 +11,13 @@ if [ "$MONITOR_COUNT" -gt 1 ]; then
     DESKTOPS_FOR_MONITOR="1 2 3 4 5 6"
 fi
 
-xrandr --output HDMI-A-0 --auto --left-of eDP --auto; sleep 1; nitrogen --restore; sleep 1;
+xrandr --output HDMI-A-0 --primary --auto --left-of eDP --auto
+sleep 1
+xrandr --output HDMI-A-0 --auto
+xrandr --output eDP --auto
+sleep 1
+nitrogen --restore
+sleep 1
 
 for monitor in $(bspc query --monitors); do bspc monitor $monitor -d $DESKTOPS_FOR_MONITOR; done
 
