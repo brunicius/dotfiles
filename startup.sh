@@ -1,5 +1,7 @@
 #!/bin/bash
 
 
-# picom
+picom --experimental-backends &
+
+
 
