@@ -26,5 +26,6 @@ import = [ "~/.config/alacritty/themes/hyper.toml" ]
 	family = "Fira Code"
 #	family = "MesloLGS NF"
 #	family = "Source Code"
+#	family = "Monocraft"
 
 
