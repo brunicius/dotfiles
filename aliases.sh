@@ -14,3 +14,9 @@ alias web_m="cd $HOME/dev/mandacaru/web; pnpm dev"
 
 # Sinks
 alias shdmi="pactl set-default-sink $(pactl list sinks | grep -e 'Name:.*hdmi' | awk '{split($0, a, ": "); print a[2]}')"
+
+# Batcat
+alias bat="batcat"
+
+# XDG-Open
+alias xop="xdg-open"
