@@ -23,7 +23,7 @@ set $alt Mod1
 
 # is used in the bar {} block below.
 
-font pango:monospace 8
+font pango:Monocraft 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 
@@ -45,13 +45,13 @@ exec --no-startup-id dex --autostart --environment i3
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 
@@ -262,6 +262,16 @@ workspace $ws7 output $secondaryScreen
 workspace $ws8 output $secondaryScreen
 workspace $ws9 output $secondaryScreen
 workspace $ws10 output $secondaryScreen
+# workspace $ws1 output $secondaryScreen
+# workspace $ws2 output $secondaryScreen
+# workspace $ws3 output $secondaryScreen
+# workspace $ws4 output $secondaryScreen
+# workspace $ws5 output $secondaryScreen
+# workspace $ws6 output $primaryScreen
+# workspace $ws7 output $primaryScreen
+# workspace $ws8 output $primaryScreen
+# workspace $ws9 output $primaryScreen
+# workspace $ws10 output $primaryScreen
 
 # Remove borders
 
@@ -291,6 +301,10 @@ gaps outer 5
 
 #border_radius 12
 
+# Screenlayout
+exec --no-startup-id xrandr --output HDMI-A-0 --auto --left-of eDP --auto
+
+
 # Feh Wallpaper startup
 #exec --no-startup-id bash $HOME/.fehbg
 # nitrogen wallpaper
@@ -305,12 +319,12 @@ exec --no-startup-id "sleep 2; nitrogen --restore &"
 # exec_always --no-startup-id numlockx on
 
 # Screenlayout
-exec --no-startup-id $HOME/.screenlayout/lenovo-home.sh
+# exec --no-startup-id $HOME/.screenlayout/lenovo-home.sh
 
 
 # Picom startup
 #exec --no-startup-id $HOME/bin/picom --experimental-backends
-exec --no-startup-id picom
+#exec --no-startup-id picom
 
 # Touchpad Tapping to Click
 
@@ -328,9 +342,11 @@ bindsym $mod+Escape exec i3lock-fancy
 # App binds
 
 set $term "alacritty"
-set $fileManager "thunar"
-set $webBrowser "google-chrome-stable"
-set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
+set $fileManager "pcmanfm-qt"
+#set $webBrowser "google-chrome-stable"
+set $webBrowser "flatpak run org.mozilla.firefox"
+#set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
+set $printApp "flameshot gui"
 set $translateApp "crow"
 
 # Terminal
@@ -360,11 +376,11 @@ bindsym Print --release exec $printApp
 
 # Pulse Audio
 
-bindsym $mod+p exec pavucontrol
+bindsym $mod+p exec pavucontrol-qt
 
 # Winbox
 
-bindsym $mod+o exec wine $HOME/Downloads/exe/winbox64.exe
+bindsym $mod+o exec wine $HOME/Documents/winbox.exe
 
 # Translate App
 bindsym $mod+m exec $translateApp
@@ -432,3 +448,22 @@ bindsym $mod+$alt+Shift+l exec xdotool mousemove_relative -p 90 $fasterSpeed
 bindsym $mod+$alt+Shift+k exec xdotool mousemove_relative -p 0 $fasterSpeed
 # Down
 bindsym $mod+$alt+Shift+j exec xdotool mousemove_relative -p 180 $fasterSpeed
+
+# PA Output bindings
+
+bindsym $mod+$alt+Up exec $HOME/dotfiles/scripts/bluetooth.sh
+bindsym $mod+$alt+Down exec $HOME/dotfiles/scripts/bluetooth.sh down
+bindsym $mod+$alt+Home exec $HOME/dotfiles/scripts/bluetooth_info.sh
+
+bindsym $mod+$alt+Right exec $HOME/dotfiles/scripts/hdmi.sh
+bindsym $mod+$alt+Left exec $HOME/dotfiles/scripts/reconnect.sh
+
+# Center current floating window
+bindsym $mod+$alt+c move position center
+
+# Authentication Agent
+exec --no-startup-id lxqt-policykit-agent &
+
+# Picom
+exec --no-startup-id picom --experimental-backends 8
+
