@@ -9,7 +9,7 @@ polybar-msg cmd quit
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 	echo "enabling monitor $m"
-	MONITOR=$m polybar &
+	MONITOR=$m polybar --config=$HOME/.config/polybar/config.ini example &
 	sleep 1
   done
 else
