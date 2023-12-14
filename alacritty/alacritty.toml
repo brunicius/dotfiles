@@ -1,5 +1,6 @@
 # Manual #
-import = [ "~/.config/alacritty/themes/hyper.toml" ]
+#import = [ "~/.config/alacritty/themes/hyper.toml" ]
+import = [ "~/.config/alacritty/themes/github_dark_dimmed.toml" ]
 
 [env]
   TERM = "xterm-256color"
