@@ -278,9 +278,12 @@ workspace $ws10 output $secondaryScreen
 #for_window [class="^.*"] border pixel 0
 new_window normal 0
 new_float normal 0
-default_border pixel 0
+default_border pixel 2
 
 # Window rules
+
+# Floating Class
+for_window [class="floating"] floating enable
 
 # Nautilus floating
 for_window [class="Org.gnome.Nautilus"] floating enable
@@ -342,33 +345,35 @@ bindsym $mod+Escape exec i3lock-fancy
 # App binds
 
 set $term "alacritty"
+set $termFloating "alacritty --class floating"
 set $fileManager "pcmanfm-qt"
-#set $webBrowser "google-chrome-stable"
-set $webBrowser "flatpak run org.mozilla.firefox"
+set $webBrowser "google-chrome-stable"
+#set $webBrowser "flatpak run org.mozilla.firefox"
 #set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
 set $printApp "flameshot gui"
 set $translateApp "crow"
+set $calculator "gnome-calculator"
 
 # Terminal
-
 bindsym $mod+space exec $term
+# Terminal floating
+bindsym $mod+Shift+space exec --no-startup-id $termFloating
+
+# Calculator app
+bindsym XF86Calculator exec --no-startup-id $calculator
 
 # Rofi
-
 bindsym $mod+Return exec --no-startup-id rofi -show drun -icon-theme "kora" -show-icons
 
 # Lock Screen
-
 bindsym $mod+Shift+x exec --no-startup-id ~/dotfiles/lock/lock
 #exec xautolock -locker $HOME/dotfiles/lock/lock
 
 # File manager
-
 bindsym $mod+e exec $fileManager
 
 
 # Browser
-
 bindsym $mod+q exec $webBrowser
 
 # Print screen
@@ -465,5 +470,4 @@ bindsym $mod+$alt+c move position center
 exec --no-startup-id lxqt-policykit-agent &
 
 # Picom
-exec --no-startup-id picom --experimental-backends 8
-
+  exec --no-startup-id $HOME/dotfiles/startup.sh &
