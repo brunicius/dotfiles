@@ -2,6 +2,3 @@
 
 
 picom --experimental-backends &
-
-
-
