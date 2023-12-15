@@ -291,6 +291,12 @@ for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [class="Blueman-manager"] floating enable
 # Crow Translate floating
 for_window [class="Crow Translate"] floating enable
+# Mousepad
+for_window [class="Mousepad"] floating enable
+# Thunar
+for_window [class="Thunar"] floating enable
+# Gnome Calculator
+for_window [class="Gnome-calculator"] floating enable
 
 # Workspace for Puppeteer Automated Browser
 assign [class="Chromium-browser"] 2
@@ -346,7 +352,7 @@ bindsym $mod+Escape exec i3lock-fancy
 
 set $term "alacritty"
 set $termFloating "alacritty --class floating"
-set $fileManager "pcmanfm-qt"
+set $fileManager "thunar"
 set $webBrowser "google-chrome-stable"
 #set $webBrowser "flatpak run org.mozilla.firefox"
 #set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
@@ -381,7 +387,7 @@ bindsym Print --release exec $printApp
 
 # Pulse Audio
 
-bindsym $mod+p exec pavucontrol-qt
+bindsym $mod+p exec pavucontrol
 
 # Winbox
 
@@ -471,3 +477,6 @@ exec --no-startup-id lxqt-policykit-agent &
 
 # Picom
   exec --no-startup-id $HOME/dotfiles/startup.sh &
+
+# temp
+bindsym $mod+i exec bash $HOME/tmp/start.sh
