@@ -15,7 +15,7 @@ if [ "$1" = "down" ]; then
 	else
 		notify-send "$DEVICE_NAME" "Disconnecting"
         zsh $HOME/dotfiles/scripts/hdmi.sh
-		bluetoothctl disconnect
+		bluetoothctl disconnect $DEVICE_MAC
 	fi
 else
 	if [ !$CONNECTED ]; then
