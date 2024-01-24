@@ -4,4 +4,5 @@
 //@theme "/usr/share/rofi/themes/dmenu.rasi"
 //@theme "/home/brunicius/.config/rofi/themes/spotlight.rasi"
 //@theme "/home/brunicius/.config/rofi/themes/launchpad.rasi"
-@theme "/home/brunicius/.config/rofi/themes/spotlight.rasi"
+//@theme "/home/brunicius/.config/rofi/themes/spotlight.rasi"
+@theme "/home/brunicius/.config/rofi/themes/simple-tokyonight.rasi"
