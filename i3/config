@@ -58,6 +58,8 @@ exec --no-startup-id dex --autostart --environment i3
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym $alt+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym $alt+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -130,7 +132,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 
 bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+$alt+t layout tabbed
 bindsym $mod+Shift+s layout toggle split
 
 # toggle tiling / floating
@@ -312,6 +314,7 @@ gaps outer 5
 
 # Screenlayout
 exec --no-startup-id xrandr --output HDMI-A-0 --auto --left-of eDP --auto
+#exec --no-startup-id xrandr --output HDMI-A-0 --auto --right-of eDP --auto
 
 
 # Feh Wallpaper startup
@@ -352,7 +355,8 @@ bindsym $mod+Escape exec i3lock-fancy
 
 set $term "alacritty"
 set $termFloating "alacritty --class floating"
-set $fileManager "thunar"
+#set $fileManager "thunar"
+set $fileManager "alacritty -e vifm"
 set $webBrowser "google-chrome-stable"
 #set $webBrowser "flatpak run org.mozilla.firefox"
 #set $printApp "scrot -fs - | xclip -selection clipboard -target image/png -i"
@@ -363,7 +367,7 @@ set $calculator "gnome-calculator"
 # Terminal
 bindsym $mod+space exec $term
 # Terminal floating
-bindsym $mod+Shift+space exec --no-startup-id $termFloating
+bindsym $mod+Control+space exec --no-startup-id $termFloating
 
 # Calculator app
 bindsym XF86Calculator exec --no-startup-id $calculator
@@ -391,7 +395,7 @@ bindsym $mod+p exec pavucontrol
 
 # Winbox
 
-bindsym $mod+o exec wine $HOME/Documents/winbox.exe
+bindsym $mod+o exec wine $HOME/WinApps/winbox64.exe
 
 # Translate App
 bindsym $mod+m exec $translateApp
@@ -464,19 +468,19 @@ bindsym $mod+$alt+Shift+j exec xdotool mousemove_relative -p 180 $fasterSpeed
 
 bindsym $mod+$alt+Up exec $HOME/dotfiles/scripts/bluetooth.sh
 bindsym $mod+$alt+Down exec $HOME/dotfiles/scripts/bluetooth.sh down
-bindsym $mod+$alt+Home exec $HOME/dotfiles/scripts/bluetooth_info.sh
+bindsym $mod+$alt+Left exec $HOME/dotfiles/scripts/bluetooth_info.sh
 
 bindsym $mod+$alt+Right exec $HOME/dotfiles/scripts/hdmi.sh
-bindsym $mod+$alt+Left exec $HOME/dotfiles/scripts/reconnect.sh
+bindsym $mod+$alt+r exec $HOME/dotfiles/scripts/reconnect.sh
 
 # Center current floating window
 bindsym $mod+$alt+c move position center
 
 # Authentication Agent
-exec --no-startup-id lxqt-policykit-agent &
+exec --no-startup-id /usr/libexec/xfce-polkit &
 
 # Picom
-  exec --no-startup-id $HOME/dotfiles/startup.sh &
+exec --no-startup-id $HOME/dotfiles/startup.sh &
 
 # temp
 bindsym $mod+i exec bash $HOME/tmp/start.sh
