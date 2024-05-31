@@ -14,7 +14,9 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "neofusion",
+        -- colorscheme = "neofusion",
+        -- colorscheme = "nyoom",
+        colorscheme = "moonfly",
       },
     },
     -- import any extras modules here
