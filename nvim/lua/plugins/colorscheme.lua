@@ -20,16 +20,7 @@ return {
     end,
   },
   {
-    "bluz71/vim-moonfly-colors",
-    name = "moonfly",
-    lazy = false,
+    "miikanissi/modus-themes.nvim",
     priority = 1000,
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
-    },
   },
 }
