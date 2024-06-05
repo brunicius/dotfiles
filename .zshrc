@@ -137,3 +137,5 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 alias clc-o="clockify-cli out"
 alias clc-i="clockify-cli in"
 alias clc="clockify-cli"
+
+alias v="nvim"
