@@ -1,12 +1,11 @@
 # Manual #
 import = [ "~/.config/alacritty/themes/hyper.toml" ]
-#import = [ "~/.config/alacritty/themes/ayu_dark.toml" ]
 
 [env]
   TERM = "xterm-256color"
 
 [window]
-  opacity = 0.7
+  opacity = 0.9
 
 [window.padding]
     x = 15
@@ -16,7 +15,6 @@ import = [ "~/.config/alacritty/themes/hyper.toml" ]
 	blink_interval = 450
 
 [cursor.style]
-#	shape = "Block"
 	shape = "Underline"
 	blinking = "on"
 
@@ -25,9 +23,6 @@ import = [ "~/.config/alacritty/themes/hyper.toml" ]
 	size = 10
 
 [font.normal]
-#	family = "Fira Code"
-#	family = "MesloLGS NF"
-	family = "Cascadia Code"
-#	family = "Monocraft"
+  family = "SF Mono"
 
 
