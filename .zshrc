@@ -132,10 +132,15 @@ export PATH="$HOME/.jenv/bin:$PATH"
 
 # Neovim Path
 export PATH="$PATH:/opt/nvim-linux64/bin"
+# Neovim Config Home
+export NVIM_HOME="$HOME/.config/nvim"
 
 
-alias clc-o="clockify-cli out"
-alias clc-i="clockify-cli in"
 alias clc="clockify-cli"
+# Clone last entry
+alias clast="clc clone last -i=0"
+
 
 alias v="nvim"
+
+
