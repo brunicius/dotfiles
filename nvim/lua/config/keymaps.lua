@@ -39,6 +39,23 @@ keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
+keymap.set("n", "<C-j>j", function()
   vim.diagnostic.goto_next()
 end, opts)
+
+-- Virtual Environment activation
+keymap.set("n", "<leader>ve", vim.cmd.VenvSelect, { desc = "Activate virtual environment" })
+
+-- PNPM Version Scripts
+keymap.set("n", "<leader>vsM", function()
+  print("Increased Major version using PNPM.")
+  return ":!pnpm version major --no-git-tag-version<Return>"
+end, { expr = true, desc = "Bump major version in package.json" }) -- Major
+keymap.set("n", "<leader>vsm", function()
+  print("Increased Minor version using PNPM.")
+  return ":!pnpm version minor --no-git-tag-version<Return>"
+end, { expr = true, desc = "Bump minor version in package.json" }) -- Minor
+keymap.set("n", "<leader>vsp", function()
+  print("Increased Patch version using PNPM.")
+  return ":!pnpm version patch --no-git-tag-version<Return>"
+end, { expr = true, desc = "Bump patch version in package.json" }) -- Patch
