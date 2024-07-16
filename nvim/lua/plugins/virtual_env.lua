@@ -4,7 +4,7 @@ return {
   cmd = "VenvSelect",
   dependencies = { "LazyVim" },
   enabled = function()
-    return LazyVim.has("telescope.nvim")
+    return LazyVim and LazyVim.has("telescope.nvim")
   end,
   opts = {
     settings = {
