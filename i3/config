@@ -325,14 +325,16 @@ for_window [class="Pavucontrol"] floating enable
 # Workspace for Puppeteer Automated Browser
 assign [class="Chromium-browser"] 2
 
-# Gaps
+# Default Gaps
 
 gaps inner 8
 gaps outer 4
 
-# Border Radius
-
-# border_radius 12
+# Bindings for gap size
+bindsym $mod+bracketleft exec --no-startup-id i3-msg "gaps outer all minus 4"
+bindsym $mod+bracketright exec --no-startup-id i3-msg "gaps outer all plus 4"
+bindsym $mod+Shift+bracketleft exec --no-startup-id i3-msg "gaps inner all minus 4"
+bindsym $mod+Shift+bracketright exec --no-startup-id i3-msg "gaps inner all plus 4"
 
 # Screenlayout
 #exec --no-startup-id xrandr --output DisplayPort-1 --mode 2560x1440 --rate 165 --right-of HDMI-A-1 --auto
