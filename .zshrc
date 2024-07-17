@@ -141,6 +141,11 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # Neovim Config Home
 export NVIM_HOME="$HOME/.config/nvim"
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+lazyload pyenv -- 'eval "$(pyenv init -)"'
+
 
 alias clc="clockify-cli"
 # Show today report
