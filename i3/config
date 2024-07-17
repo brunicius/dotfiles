@@ -297,7 +297,7 @@ workspace $ws10 output $secondaryScreen
 #for_window [class="^.*"] border pixel 0
 new_window normal 0
 new_float normal 0
-default_border pixel 2
+default_border pixel 0
 
 # Window rules
 
@@ -327,12 +327,12 @@ assign [class="Chromium-browser"] 2
 
 # Gaps
 
-#gaps inner 5
-#gaps outer 5
+gaps inner 8
+gaps outer 4
 
 # Border Radius
 
-#border_radius 12
+# border_radius 12
 
 # Screenlayout
 #exec --no-startup-id xrandr --output DisplayPort-1 --mode 2560x1440 --rate 165 --right-of HDMI-A-1 --auto
