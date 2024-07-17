@@ -122,6 +122,8 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Clockify CLI completion
+source <(clockify-cli completion zsh)
 
 # Android Studio
 
@@ -137,8 +139,13 @@ export NVIM_HOME="$HOME/.config/nvim"
 
 
 alias clc="clockify-cli"
+# Show today report
+alias clctd="clc report today"
 # Clone last entry
 alias clast="clc clone last -i=0"
+
+# Copy to clipboard
+alias cpy="xclip -selection clipboard"
 
 
 alias v="nvim"
