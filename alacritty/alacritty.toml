@@ -1,11 +1,15 @@
 # Manual #
-import = [ "~/.config/alacritty/themes/hyper.toml" ]
+import = [ 
+  "~/.config/alacritty/themes/catppuccin.toml"
+  # "~/.config/alacritty/themes/hyper.toml"
+]
 
 [env]
   TERM = "xterm-256color"
 
 [window]
-  opacity = 0.8
+  # opacity = 0.8
+  opacity = 1
 
 [window.padding]
     x = 15
