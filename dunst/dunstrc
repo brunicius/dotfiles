@@ -138,7 +138,7 @@
 
     ### Text ###
 
-    font = 'SF Mono' 12
+    font = SFMono Nerd Font 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -178,7 +178,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%b\n\n<span font_size="x-small"><i>%s</i> %p</span>"
+    format = "<span>%b</span><b><span font_size="x-small" allow_breaks="true">\n\n<i>%s</i> %p</span></b>"
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
     alignment = left
@@ -228,7 +228,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 64
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
