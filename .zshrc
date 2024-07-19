@@ -107,10 +107,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-lazyload nvm -- 'source ~/.nvm/nvm.sh'
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# lazyload nvm -- 'source ~/.nvm/nvm.sh'
+# lazyload pyright -- 'source ~/.nvm/nvm.sh'
+# lazyload pnpm -- 'source ~/.nvm/nvm.sh'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -141,6 +143,8 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # Neovim Config Home
 export NVIM_HOME="$HOME/.config/nvim"
 
+export PATH="$PATH:$HOME/.local/bin"
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
@@ -159,4 +163,4 @@ alias cpy="xclip -selection clipboard"
 
 alias v="nvim"
 
-
+eval "$(zoxide init zsh)"
