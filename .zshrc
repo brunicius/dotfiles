@@ -164,3 +164,5 @@ alias cpy="xclip -selection clipboard"
 alias v="nvim"
 
 eval "$(zoxide init zsh)"
+
+alias c="z"
